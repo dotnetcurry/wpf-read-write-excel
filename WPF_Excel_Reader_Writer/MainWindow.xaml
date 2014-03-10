@@ -1,0 +1,28 @@
+﻿<Window x:Class="WPF_Excel_Reader_Writer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="401.684" Width="583.789"
+         Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="272*"/>
+            <RowDefinition Height="71*"/>
+        </Grid.RowDefinitions>
+        <Button Content="Synchronize" 
+                Name="btnsync" Grid.Row="1"
+                FontSize="40" FontFamily="Times New Roman"
+                FontWeight="ExtraBold"
+                 Click="btnsync_Click"/>
+        <DataGrid Name="dgEmp" AutoGenerateColumns="False" ColumnWidth="*"
+                   CellEditEnding="dgEmp_CellEditEnding" RowEditEnding="dgEmp_RowEditEnding"
+                   SelectionChanged="dgEmp_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="EmpNo" Binding="{Binding EmpNo}"></DataGridTextColumn>
+                <DataGridTextColumn Header="EmpName" Binding="{Binding EmpName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Salary" Binding="{Binding Salary}"></DataGridTextColumn>
+                <DataGridTextColumn Header="DeptName" Binding="{Binding DeptName}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>
